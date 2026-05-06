@@ -96,6 +96,6 @@ class LSF:
 
         return sum
     
-if __name__ == "__main__":
-    lsf = LSF("C:\\Users\\Luke Deffenbaugh\\Documents\\cli-tools\\april_spend.csv")
-    print(lsf.get_total_remaining())
+    def get_transactions(self) -> list[Transaction]:
+        return [x for x in self._transaction_list]
+    

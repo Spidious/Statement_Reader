@@ -1,0 +1,3 @@
+# This is a false requirements.txt as I couldn't use a VENV at the time
+pip install plotly
+pip install pyyaml

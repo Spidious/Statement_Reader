@@ -1,0 +1,11 @@
+transaction-category: {
+  income,
+  transportation,
+  housing,
+  food,
+  pets,
+  savings,
+  investment,
+  subscriptions,
+  miscellaneous,
+}
