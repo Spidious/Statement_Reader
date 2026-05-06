@@ -46,10 +46,13 @@ class LSF:
         with open(path, "rt") as f:
             # Grab header
             header = f.readline().lower().strip().split(',')
-            # Loop over each line
+            # Loop over each line and split using regex 
+            # Occasionally a cell will have a ',' in it so it cannot be broken using that deliminator
+            _CSV_RE = re.compile(r"((\")?.*?(?(2)\"|))(?:,|$|\n)", re.IGNORECASE)
             for line in f:
-                lines.append(line.lower().strip().split(','))
-
+                m = _CSV_RE.findall(line.lower().strip())
+                lines.append([x[0] for x in m])
+                
         # Identify indexes
         indexes = {"desc": -1,
                    "amount": -1,
