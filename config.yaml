@@ -1,4 +1,4 @@
-transaction-category: {
+transaction-category: [
   income,
   transportation,
   housing,
@@ -6,6 +6,7 @@ transaction-category: {
   pets,
   savings,
   investment,
+  bills,
   subscriptions,
   miscellaneous,
-}
+]
