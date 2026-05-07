@@ -1,5 +1,7 @@
 from lsf import LSF
 import yaml
+import plotly.express as px
+import random
 
 '''
 Application run from here but will constantly be broken into several files
@@ -19,9 +21,13 @@ for key in config['transaction-category']:
 
 for t in statement.get_transactions():
     user_in = input("\n" + t.amount + " : " + t.description + f"\n{[x + f" ({x[:3]})" for x in config['transaction-category']]}: ")
+    # Temporary user in so I don't have to do this every time I test it
+    # user_in = random.choice(list(totals.keys()))
     if user_in == "":
         continue
     totals[user_in] += float(t.amount)
 
-
-print(totals)
+fig = px.pie(values=totals.values(), names=totals.keys())
+fig.show()
+while(True):
+    pass
